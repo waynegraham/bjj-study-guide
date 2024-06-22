@@ -2,31 +2,54 @@
 title: Home
 layout: page.njk
 eleventyNavigation:
-    key: Home
-    order: 1
+  key: Home
+  order: 1
 ---
 
 <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-    <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-        <button class="btn btn-primary btn-lg" type="button">Example button</button>
-    </div>
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">{{ site.title }}</h1>
+    <p class="col-md-8 fs-4">
+      {{ site.description }}
+    </p>
+    <button class="btn btn-primary btn-lg" type="button">Example button</button>
+  </div>
 </div>
 
-<div class="row align-items-md-stretch">
-    <div class="col-md-6">
-        <div class="h-100 p-5 text-bg-dark rounded-3">
-            <h2>Change the background</h2>
-            <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
-            <button class="btn btn-outline-light" type="button">Example button</button>
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for move in moves %} {%- set path = ['/moves/', move.name | slugify, '/']
+    | join %}
+    <div class="col">
+      <div class="card shadow-sm">
+        {# TODO: use image shortcode #}
+        <a href="{{ path | url }}">
+          <img class="card-img-top" src="https://i3.ytimg.com/vi/{{ move.url }}/maxresdefault.jpg" alt="{{ move.name }}">
+        </a>
+        <div class="card-body">
+          <p class="card-text">{{ move.name }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a
+                href="{{ path | url }}"
+                class="btn btn-sm btn-outline-secondary"
+                >View</a
+              >
+            </div>
+            <small class="text-body-secondary">{{ move.tags }}</small>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="col-md-6">
-        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-            <h2>Add borders</h2>
-            <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-            <button class="btn btn-outline-secondary" type="button">Example button</button>
-        </div>
-    </div>
+    {% endfor %}
+  </div>
 </div>
+
+{# <ul>
+  {% for move in moves %} {%- set path = ['/moves/', move.name | slugify, '/'] |
+  join %}
+  <li>
+    <a href="{{ path | url }}">{{ move.name }}</a>
+  </li>
+  {% endfor %}
+</ul> #}

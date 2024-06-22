@@ -8,6 +8,7 @@
   "scripts": {
     "start": "eleventy --serve --incremental",
     "watch": "eleventy --watch",
+    "debug": "DEBUG=Eleventy* eleventy --serve",
     "serve": "eleventy --serve",
     "bench": "DEBUG=Eleventy:Benchmark* eleventy",
     "build": "eleventy && npx pagefind --site _site",
