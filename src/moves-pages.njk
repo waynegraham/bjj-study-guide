@@ -24,6 +24,8 @@ permalink: "moves/{{ move.name | slugify }}/"
   </div>
 
   <div class="col">
-    {{ move.notes }}
+    {%- set belt_url = ['/assets/images/BJJ_', move.belt, '_Belt.svg.png'] | join %}
+    <p><img src="{{ belt_url | url }}" alt="{{move.belt}}"></p>
+    <p>{{ move.notes }}</p>
   </div>
 </div>
