@@ -32,6 +32,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11ty/eleventy-plugin-vite": "^4.0.0",
+    "@11ty/eleventy-util-filters": "file:../eleventy-util-filters",
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.1",
     "del-cli": "^5.1.0",
@@ -48,6 +49,8 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.7.1",
     "pagefind": "^1.1.0"
   }
 }

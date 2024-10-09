@@ -8,11 +8,22 @@ permalink: "moves/{{ move.name | slugify }}/"
 ---
 {# https://www.11ty.dev/docs/pages-from-data/ #}
 
+<div class="row">
+  <div class="col">
+    <h1 data-pagefind-meta="title">{{ move.name }}</h1>
 
-<h1>{{ move.name }}</h1>
+    <ul>
+        <li><span data-pagefind-filter="category">{{ move.category | title }}</span></li>
+        <li><span data-pagefind-filter="move" class="move">{{ move.tags | title }}</span></li>
+        <li><span data-pagefind-filter="belt">{{ move.belt | title }}</span></li>
+    </ul>
 
-<ul>
-    <li>{{ move.tags }}</li>
-</ul>
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.youtube.com/embed/{{ move.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ move.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div class="col">
+    {{ move.notes }}
+  </div>
+</div>

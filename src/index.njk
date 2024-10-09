@@ -8,7 +8,7 @@ eleventyNavigation:
 
 <div class="p-5 mb-4 bg-body-tertiary rounded-3">
   <div class="container-fluid py-5">
-    <h1 class="display-5 fw-bold">{{ site.title }}</h1>
+    <h1 id="intro-title" class="display-5 fw-bold">{{ site.title }}</h1>
     <p class="col-md-8 fs-4">
       {{ site.description }}
     </p>
@@ -16,15 +16,19 @@ eleventyNavigation:
   </div>
 </div>
 
+{# {{ collections.moves | dump | safe}} #}
+
 <div class="container">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     {% for move in moves %} {%- set path = ['/moves/', move.name | slugify, '/']
     | join %}
     <div class="col">
-      <div class="card shadow-sm">
+      <div class="card shadow-sm {{ move.tags }}">
         {# TODO: use image shortcode #}
         <a href="{{ path | url }}">
-          <img class="card-img-top" src="https://i3.ytimg.com/vi/{{ move.url }}/maxresdefault.jpg" alt="{{ move.name }}">
+          {%- set image_path = ["https://i3.ytimg.com/vi/", move.url, "/maxresdefault.jpg"] | join %}
+          {% image image_path, move.name, 'img-fluid' %}
+          {# <img class="card-img-top" src="https://i3.ytimg.com/vi/{{ move.url }}/maxresdefault.jpg" alt="{{ move.name }}"> #}
         </a>
         <div class="card-body">
           <p class="card-text">{{ move.name }}</p>

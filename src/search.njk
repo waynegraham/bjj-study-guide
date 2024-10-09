@@ -11,6 +11,8 @@ eleventyNavigation:
 <div id="search"></div>
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-    new PagefindUI({ element: '#search', showSubResults: true })
+
+    let search = new PagefindUI({ element: '#search', showSubResults: true })
+    search.triggerSearch("throw")
   })
 </script>

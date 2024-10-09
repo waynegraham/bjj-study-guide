@@ -13,6 +13,8 @@ const EleventyPluginNavigation = require('@11ty/eleventy-navigation')
 const EleventyPluginRss = require('@11ty/eleventy-plugin-rss')
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite')
 
+const EleventyFiltersPlugin = require('@11ty/eleventy-util-filters')
+
 const pluginImages = require('./eleventy.images.js')
 
 function extractExcerpt(article) {
@@ -38,9 +40,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/assets/')
   eleventyConfig.addPassthroughCopy('CNAME')
 
+  // plugins
   eleventyConfig.addPlugin(pluginImages)
   eleventyConfig.addPlugin(EleventyPluginNavigation)
   eleventyConfig.addPlugin(EleventyPluginRss)
+  eleventyConfig.addPlugin(EleventyFiltersPlugin)
 
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     tempFolderName: '.11ty-vite', // Default name of the temp folder
@@ -84,6 +88,11 @@ module.exports = function (eleventyConfig) {
     }
   })
 
+  // collections
+  // eleventyConfig.addCollection("moveTags", function (collectionApi) {
+  //     return collectionApi.getFilteredByTags("move", "page");
+  // });
+
   // filters
   eleventyConfig.addFilter('head', (array, n) => {
     if (!Array.isArray(array) || array.length === 0) {
@@ -102,6 +111,7 @@ module.exports = function (eleventyConfig) {
 		for(let item of collection) {
 			(item.data.tags || []).forEach(tag => tagSet.add(tag));
 		}
+    console.log('collection', collection)
 		return Array.from(tagSet);
 	});
 
