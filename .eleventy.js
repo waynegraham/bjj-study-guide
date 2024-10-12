@@ -13,7 +13,6 @@ const EleventyPluginNavigation = require('@11ty/eleventy-navigation')
 const EleventyPluginRss = require('@11ty/eleventy-plugin-rss')
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite')
 
-const EleventyFiltersPlugin = require('@11ty/eleventy-util-filters')
 
 const pluginImages = require('./eleventy.images.js')
 
@@ -44,12 +43,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginImages)
   eleventyConfig.addPlugin(EleventyPluginNavigation)
   eleventyConfig.addPlugin(EleventyPluginRss)
-  eleventyConfig.addPlugin(EleventyFiltersPlugin)
+  // eleventyConfig.addPlugin(EleventyFiltersPlugin)
 
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     tempFolderName: '.11ty-vite', // Default name of the temp folder
 
-    // base: 'creating-access.hbculibraries.org',
+    base: 'bjj-study-guide',
 
     root: path.resolve(__dirname, 'src'),
 

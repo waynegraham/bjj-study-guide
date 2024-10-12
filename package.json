@@ -1,6 +1,6 @@
 {
-  "name": "eleventy-plus-bootstrap-scaffold",
-  "version": "0.0.1",
+  "name": "bjj-study-guide",
+  "version": "1.0.01",
   "browserslist": [
     "> 0.5%",
     "not IE 11"
