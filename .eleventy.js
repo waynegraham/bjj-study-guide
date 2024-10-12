@@ -45,47 +45,50 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyPluginRss)
   // eleventyConfig.addPlugin(EleventyFiltersPlugin)
 
-  eleventyConfig.addPlugin(EleventyVitePlugin, {
-    tempFolderName: '.11ty-vite', // Default name of the temp folder
+  // eleventyConfig.addPlugin(EleventyVitePlugin, {
+  //   tempFolderName: '.11ty-vite', // Default name of the temp folder
 
-    base: 'bjj-study-guide',
+  //   base: '/bjj-study-guide/',
 
-    root: path.resolve(__dirname, 'src'),
+  //   root: path.resolve(__dirname, 'src'),
 
-    // Options passed to the Eleventy Dev Server
-    // e.g. domdiff, enabled, etc.
+  //   // Options passed to the Eleventy Dev Server
+  //   // e.g. domdiff, enabled, etc.
 
-    // Added in Vite plugin v2.0.0
-    serverOptions: {},
+  //   // Added in Vite plugin v2.0.0
+  //   serverOptions: {
+  //     base: '/bjj-study-guide/'
+  //   },
 
-    // Defaults are shown:
-    viteOptions: {
-      // base: githubPath,
-      clearScreen: false,
-      appType: 'mpa', // New in v2.0.0
-      assetsInclude: ['**/*.xml', '**/*.txt', 'CNAME'],
+  //   // Defaults are shown:
+  //   viteOptions: {
+  //     // base: githubPath,
+  //     base: '/bjj-study-guide/',
+  //     clearScreen: false,
+  //     appType: 'mpa', // New in v2.0.0
+  //     assetsInclude: ['**/*.xml', '**/*.txt', 'CNAME'],
 
-      // plugins: [pagefind()],
+  //     // plugins: [pagefind()],
 
-      server: {
-        mode: 'development',
-        middlewareMode: true
-      },
+  //     server: {
+  //       mode: 'development',
+  //       middlewareMode: true
+  //     },
 
-      build: {
-        mode: 'production'
-      },
+  //     build: {
+  //       mode: 'production'
+  //     },
 
-      // New in v2.0.0
-      resolve: {
-        alias: {
-          // Allow references to `node_modules` folder directly
-          '/node_modules': path.resolve('.', 'node_modules'),
-          '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap')
-        }
-      }
-    }
-  })
+  //     // New in v2.0.0
+  //     resolve: {
+  //       alias: {
+  //         // Allow references to `node_modules` folder directly
+  //         '/node_modules': path.resolve('.', 'node_modules'),
+  //         '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap')
+  //       }
+  //     }
+  //   }
+  // })
 
   // collections
   // eleventyConfig.addCollection("moveTags", function (collectionApi) {
@@ -204,8 +207,8 @@ module.exports = function (eleventyConfig) {
     },
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk'
+    markdownTemplateEngine: 'njk',
     // important for github pages build (subdirectory):
-    // pathPrefix: "/"
+    pathPrefix: "/bjj-study-guide/"
   }
 }

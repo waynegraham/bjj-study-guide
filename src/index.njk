@@ -25,9 +25,9 @@ eleventyNavigation:
       <div class="card shadow-sm {{ move.tags }}">
         {# TODO: use image shortcode #}
         <a href="{{ path | url }}">
-          {%- set image_path = ["https://i3.ytimg.com/vi/", move.url, "/maxresdefault.jpg"] | join %}
-          {% image image_path, move.name, 'img-fluid' %}
-          {# <img class="card-img-top" src="https://i3.ytimg.com/vi/{{ move.url }}/maxresdefault.jpg" alt="{{ move.name }}"> #}
+          {# {%- set image_path = ["https://i3.ytimg.com/vi/", move.url, "/maxresdefault.jpg"] | join %}
+          {% image image_path, move.name, 'img-fluid' %} #}
+          <img class="card-img-top" src="https://i3.ytimg.com/vi/{{ move.url }}/maxresdefault.jpg" alt="{{ move.name }}">
         </a>
         <div class="card-body">
           <p class="card-text">{{ move.name }}</p>

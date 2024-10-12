@@ -9,7 +9,7 @@ permalink: "moves/{{ move.name | slugify }}/"
 {# https://www.11ty.dev/docs/pages-from-data/ #}
 
 <div class="row">
-  <div class="col">
+  <div class="col-md-8">
     <h1 data-pagefind-meta="title">{{ move.name }}</h1>
 
     <ul>
@@ -23,9 +23,10 @@ permalink: "moves/{{ move.name | slugify }}/"
     </div>
   </div>
 
-  <div class="col">
+  <div class="col-md-4">
     {%- set belt_url = ['/assets/images/BJJ_', move.belt, '_Belt.svg.png'] | join %}
-    <p><img src="{{ belt_url | url }}" alt="{{move.belt}}"></p>
+    <p><img class="img-fluid" src="{{ belt_url | url }}" alt="{{move.belt}}"></p>
+    <h3>Notes</h3>
     <p>{{ move.notes }}</p>
   </div>
 </div>
