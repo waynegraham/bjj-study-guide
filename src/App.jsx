@@ -64,6 +64,9 @@ function App() {
         contains the moves (to help you remember the names) and the videos (to
         help you learn them).
       </p>
+      <p className="mb-8">
+       This is a work in progres...please share feedback with me!.
+      </p>
       <div className="mb-8">
         <Search onSearch={handleSearch} />
         <Filter
