@@ -195,6 +195,21 @@ module.exports = function (eleventyConfig) {
     return DateTime.now().toString()
   })
 
+  // Add a custom filter to get unique values from an array
+  eleventyConfig.addFilter("unique", function(array) {
+    return [...new Set(array)];
+  });
+
+  // Add a custom filter to flatten an array
+  eleventyConfig.addFilter("flatten", function(array) {
+    return array.flat();
+  });
+
+  // Add a custom map filter
+  eleventyConfig.addFilter("map", function(array, key) {
+    return array.map(item => item[key]);
+  });
+
   return {
     dir: {
       input: 'src',
