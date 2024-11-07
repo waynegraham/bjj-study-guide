@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+
 const MoveModal = ({ title, youtubeUrl, notes }) => {
   const [showModal, setShowModal] = useState(false)
 
