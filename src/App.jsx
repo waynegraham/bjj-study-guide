@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import MoveList from "./components/MoveList";
 import Search from "./components/Search";
+// import SearchSection from "./components/SearchSection";
 import Hero from "./components/Hero";
 import Filter from "./components/Filter";
 import Footer from "./components/Footer";
 import movesData from "./data/moves.json";
+
+//https://www.npmjs.com/package/react-ga4
+import ReactGA from "react-ga4";
+ReactGA.initialize("yG-BY5PHZWJXB");
 
 function App() {
   const [moves, setMoves] = useState([]);
@@ -59,19 +64,11 @@ function App() {
   return (
     <>
     <main>
-      {/* <Hero /> */}
+      <Hero />
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8 text-center">
-          Gracie Belt Demonstration Study Guide
-        </h1>
-        <p className="mb-8">
-          This is my study guide for the Gracie Belt Demonstration. The list
-          contains the moves (to help you remember the names) and the videos (to
-          help you learn them).
-        </p>
-        <p className="mb-8">
-        This is a work in progress...please share feedback with me!.
-        </p>
+
+        {/* <SearchSection /> */}
+        
         <div className="mb-8">
           <Search onSearch={handleSearch} />
           <Filter
@@ -87,7 +84,7 @@ function App() {
           </button>
 
           <a href="gracie-jiu-jitsu_compress.pdf" className="ms-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Curriculum Book</a>
-
+          {/* <a href="gracie-jiu-jitsu_compress.pdf" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Curriculum</a> */}
         </div>
         <MoveList moves={filteredMoves} />
       </div>
