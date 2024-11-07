@@ -1,6 +1,4 @@
-import { FaHeart } from 'react-icons/fa'
-import { FaGithub } from 'react-icons/fa'
-import { FaLinkedin } from 'react-icons/fa'
+import { FaHeart, FaGithub, FaLinkedin } from 'react-icons/fa'
 
 // https://clarity-tailwind.preview.uideck.com/
 
