@@ -49,8 +49,7 @@ const MoveModal = ({ title, youtubeUrl, notes }) => {
                 </h3>
                 <button
                   type="button"
-                  className="text-gray-400 bg-transparent hover:bg-gray-200   
- hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                   onClick={handleClose}
                 >
                   <svg
@@ -68,8 +67,7 @@ const MoveModal = ({ title, youtubeUrl, notes }) => {
                 </button>
               </div>
               <div
-                className="p-4   
- sm:p-6"
+                className="p-4 sm:p-6"
               >
                 <div className="aspect-video">
                   <iframe
@@ -79,7 +77,8 @@ const MoveModal = ({ title, youtubeUrl, notes }) => {
                     allowFullScreen
                   ></iframe>
                 </div>
-                <p className="mt-4 text-gray-500 dark:text-gray-400">{notes}</p>
+                <h2 className='mt-4 text-lg text-gray-900 dark:text-gray-400'>Wayne's notes:</h2>
+                <p className="mt-2 text-gray-500 dark:text-gray-400">{notes}</p>
               </div>
             </div>
           </div>
