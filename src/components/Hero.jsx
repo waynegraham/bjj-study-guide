@@ -17,11 +17,11 @@ const Hero = () => {
         <p className="text-lg text-gray-600 dark:text-gray-300">
           This is my study guide for the Gracie Belt Demonstration. The site
           contains the moves (to help you remember the names) and the videos (to
-          help you learn them) as well as the actual references to the
+          help you recall them) as well as the actual references to the
           curriculum.
         </p>
-        <p className="mt-4">
-          This is a work in progress...please share feedback with me!.
+        <p className="mt-4  text-gray-600 dark:text-gray-300">
+          This is a work in progress...please share feedback with me!
         </p>
       </div>
     </section>

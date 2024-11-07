@@ -1,7 +1,12 @@
 // import { useState } from 'react';
+
+import { Link } from "react-router-dom";
+
 import PropTypes from "prop-types";
 
 import Belt from './Belt';
+import Modal from "./Modal"
+
 
 function MoveCard({ move }) {
   // const [showDetails, setShowDetails] = useState(false);
@@ -11,34 +16,35 @@ function MoveCard({ move }) {
   // };
 
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a
-        href={`https://www.youtube.com/watch?v=${move.url}`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          className="rounded-t-lg"
-          src={`https://i3.ytimg.com/vi/${move.url}/maxresdefault.jpg`}
-          alt="{move.name}"
-        />
-      </a>
+    <div className="move max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      
+      <img
+        className="rounded-t-lg"
+        src={`https://i3.ytimg.com/vi/${move.url}/maxresdefault.jpg`}
+        alt="{move.name}"
+      />
+
       <div className="p-5">
-        <a
+        {/* <a
           href={`https://www.youtube.com/watch?v=${move.url}`}
           target="_blank"
           rel="noopener noreferrer"
-        >
+        > */}
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {move.name}
           </h5>
-        </a>
+        {/* </a> */}
 
         <Belt belt={ move.belt } />
 
-        <p className="text-gray-600 mb-2">Category: {move.category}</p>
+        <p className="text-gray-700 dark:text-gray-400 font-normal mb-3 font-normal">Category: {move.category}</p>
         {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p> */}
-        <a
+        <Modal
+          title={move.name}
+          youtubeUrl={move.url}
+          notes={move.notes }
+        />
+        {/* <a
           href={`https://www.youtube.com/watch?v=${move.url}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -60,9 +66,13 @@ function MoveCard({ move }) {
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
-        </a>
+        </a> */}
 
-        <p className="text-gray-600 my-2"><a href={`/gracie-jiu-jitsu_compress.pdf#page=${move.page}`}>Reference PDF</a></p>
+
+        <p className="text-gray-700 dark:text-gray-400 font-normal mt-3 font-normal">
+          
+          <a href={`/bjj-study-guide/gracie-jiu-jitsu_compress.pdf#page=${move.page}`}>Reference PDF</a>
+        </p>
 
       </div>
     </div>
@@ -75,8 +85,8 @@ MoveCard.propTypes = {
     name: PropTypes.string.isRequired,
     belt: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    page: PropTypes.string.isRequired,
-    notes:  PropTypes.string.isRequired,
+    page: PropTypes.number,
+    notes:  PropTypes.string,
   }).isRequired,
 };
 

@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import Hero from "./components/Hero";
 import Filter from "./components/Filter";
 import Footer from "./components/Footer";
+
 import movesData from "./data/moves.json";
 
 //https://www.npmjs.com/package/react-ga4
