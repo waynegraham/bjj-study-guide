@@ -21,7 +21,7 @@ const Hero = () => {
           curriculum.
         </p>
         <p className="mt-4  text-gray-600 dark:text-gray-300">
-          This is a work in progress...please share feedback with me!
+          This is a work in progress...please <a target="_blank" href="https://github.com/waynegraham/bjj-study-guide/issues">share feedback with me</a>!
         </p>
       </div>
     </section>

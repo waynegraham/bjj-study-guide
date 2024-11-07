@@ -1,6 +1,3 @@
-import React, { useState } from 'react'
-
-
 const MoveModal = ({ title, youtubeUrl, notes }) => {
   const [showModal, setShowModal] = useState(false)
 
@@ -77,7 +74,7 @@ const MoveModal = ({ title, youtubeUrl, notes }) => {
                     allowFullScreen
                   ></iframe>
                 </div>
-                <h2 className='mt-4 text-lg text-gray-900 dark:text-gray-400'>Wayne's notes:</h2>
+                <h2 className='mt-4 text-lg text-gray-900 dark:text-gray-400'>Wayne&apos;s notes:</h2>
                 <p className="mt-2 text-gray-500 dark:text-gray-400">{notes}</p>
               </div>
             </div>
